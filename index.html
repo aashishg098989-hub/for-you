@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Angel ❤️</title>
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(to bottom,#ffb6c1,#ffe4e1);
+  overflow:hidden;
+}
+.page{
+  display:none;
+  height:100vh;
+  width:100vw;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px;
+}
+.page.active{display:flex;}
+h1,h2,p{
+  color:#5a0b2e;
+}
+button{
+  background:#ff5c8a;
+  border:none;
+  color:white;
+  padding:12px 24px;
+  border-radius:30px;
+  font-size:18px;
+  margin-top:20px;
+  cursor:pointer;
+}
+.heart,.balloon{
+  position:absolute;
+  animation:float 8s linear infinite;
+  opacity:0.7;
+}
+@keyframes float{
+  0%{transform:translateY(100vh);}
+  100%{transform:translateY(-10vh);}
+}
+.card{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  max-width:600px;
+  box-shadow:0 0 20px rgba(0,0,0,0.1);
+  overflow-y:auto;
+  max-height:80vh;
+}
+.teddy{
+  font-size:120px;
+}
+</style>
+</head>
+<body>
+
+<div class="page active" id="p1">
+<h1>Hi Jaan</h1>
+<button onclick="next(2)">Tap 💖</button>
+</div>
+
+<div class="page" id="p2">
+<h1>IHYKILYSM</h1>
+<h3>(I Hope You Know I Love You So Much)</h3>
+<button onclick="next(3)">Next 💕</button>
+</div>
+
+<div class="page" id="p3">
+<div class="card">
+<p>
+Angel meri chhoti si pyaari si buggu dil ki jitni soft utni hi jyada achi aur pyaari tujhe mein bohot pyaar krta hu tum chahe shingaar kro ja sangharsh tum pyaari lgti ho tum glasses daalke apne chehre par gambhirta ko sajaati ho pyaari lgti ho tum jb kitaabo ke panne palatti ho boht pyaari lgti ho jab tum sochti ho hawao mein apne supno ko bunti ho khud se baate krti ho boht pyaari lgti ho subha se shaam tk rukti nhi mehnat krti hui sherni ki tarah lgi rehti ho sabka bhi aur khud ka bhi khyaal rkhti ho shingaar jab sangharsh ke sath nazar aata hai self respect aur confidene ke sath dikhai deta hai boht khoobsurat lgta hai, bche hum milke sb kr lenge dheere-dheere sb swaar lenge aur mere liye tujhse badhkar kuch nhi hai teri khushi mein meri khushi hai tere gham mein mere gham hai tuhi meri dua hai chahe tum highs pr ho ja lows mein tumhare thoughts tumhare flaws tumhari silence or unsaid words mein sbhi ko smjhunga aur hmesha tumhara sath dunga jab bhi thk jao akela mehsoos mt krna aa jana bhai ko ek awaaj lgana bhai usee waqt tumhare paas ayega tum meri jaana ho mujhe boht pyaari ho tum don't give up i believe one you trust on you and never give up on you 🫂❤️
+</p>
+</div>
+<button onclick="next(4)">Final 🧸</button>
+</div>
+
+<div class="page" id="p4">
+<div class="teddy">🧸</div>
+<h1>I love you Angel ❤️</h1>
+<h2>— Aashish</h2>
+</div>
+
+<script>
+function next(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById("p"+n).classList.add("active");
+  spawn();
+}
+function spawn(){
+  for(let i=0;i<10;i++){
+    let el=document.createElement("div");
+    el.className = (Math.random()>0.5) ? "heart" : "balloon";
+    el.innerHTML = el.className=="heart"?"💖":"🎈";
+    el.style.left=Math.random()*100+"vw";
+    el.style.fontSize=20+Math.random()*40+"px";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),8000);
+  }
+}
+spawn();
+</script>
+
+</body>
+</html>
